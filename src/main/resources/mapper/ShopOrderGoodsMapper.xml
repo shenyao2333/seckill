@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.seckill.mapper.ShopOrderGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.sy.seckill.domain.ShopOrderGoods">
+    <!--@mbg.generated-->
+    <!--@Table shop_order_goods-->
+    <id column="og_id" jdbcType="INTEGER" property="ogId" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="order_sn" jdbcType="VARCHAR" property="orderSn" />
+    <result column="goods_num" jdbcType="INTEGER" property="goodsNum" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="settle_price" jdbcType="DECIMAL" property="settlePrice" />
+    <result column="sale__price" jdbcType="DECIMAL" property="salePrice" />
+    <result column="total_prices" jdbcType="DECIMAL" property="totalPrices" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    og_id, order_id, user_id, order_sn, goods_num, goods_price, settle_price, sale__price, 
+    total_prices, `status`, remarks, goods_id, goods_img, created
+  </sql>
+</mapper>
