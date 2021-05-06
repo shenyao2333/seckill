@@ -1,6 +1,7 @@
 package com.sy.seckill.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.util.concurrent.RateLimiter;
 import com.sy.seckill.constants.RabbitMQConstants;
 import com.sy.seckill.rabbitmq.MQMessage;
 import com.sy.seckill.web.R;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: shenyao
@@ -41,6 +43,26 @@ public class TestController  {
         rabbitTemplate.convertAndSend(RabbitMQConstants.EXCHANGE_TOPIC_ORDER,RabbitMQConstants.ROUTING_TOPIC_ORDER,message);
         return R.ok("成功了！");
     }
+
+
+    private int i =1;
+
+    private  RateLimiter rateLimiter = RateLimiter.create(50, 1, TimeUnit.SECONDS);
+
+    @GetMapping("/testLimiter")
+    public R testLimiter(){
+        boolean b = rateLimiter.tryAcquire();
+        if (b){
+            return R.ok();
+        }
+        i++;
+        System.out.println("限流了"+i);
+        return R.fail("限流！！！！"+i);
+
+
+    }
+
+
 
 
 }
