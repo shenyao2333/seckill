@@ -2,6 +2,7 @@ package com.sy.seckill.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sy.seckill.domain.ShopGoods;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Author: shenyao
@@ -9,4 +10,14 @@ import com.sy.seckill.domain.ShopGoods;
  * @description: ${description}
  */
 public interface ShopGoodsMapper extends BaseMapper<ShopGoods> {
+
+
+
+    Integer reduceInventory(@Param("goodsId") Integer goodsId, @Param("inventoryNum") Integer inventoryNum);
+
+
+
+    Integer getInventory(@Param("goodsId") Integer goodsId);
+
+
 }

@@ -45,5 +45,10 @@ public class ShopGoods implements Serializable {
     @ApiModelProperty(value = "价格")
     private BigDecimal price;
 
+
+    @TableField(value = "inventory")
+    @ApiModelProperty(value = "库存")
+    private Integer inventory;
+
     private static final long serialVersionUID = 1L;
 }

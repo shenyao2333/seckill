@@ -24,4 +24,10 @@
     og_id, order_id, user_id, order_sn, goods_num, goods_price, settle_price, sale__price, 
     total_prices, `status`, remarks, goods_id, goods_img, created
   </sql>
+  
+  
+  
+
+  
+  
 </mapper>

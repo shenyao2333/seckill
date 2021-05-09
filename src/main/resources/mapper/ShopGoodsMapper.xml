@@ -9,9 +9,21 @@
     <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
     <result column="goods_describe" jdbcType="VARCHAR" property="goodsDescribe" />
     <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="inventory" jdbcType="INTEGER" property="inventory" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    goods_id, goods_name, goods_img, goods_describe, price
+    goods_id, goods_name, goods_img, goods_describe, price,inventory
   </sql>
+
+
+  <update id="reduceInventory" >
+    update shop_goods
+    set inventory = IFNULL(inventory,0) - #{inventoryNum,jdbcType=INTEGER}
+    where goods_id = #{goodsId,jdbcType=INTEGER} and   inventory >0 ;
+  </update>
+
+  <select id="getInventory" resultType="java.lang.Integer">
+    select inventory from shop_goods where goods_id = #{goodsId,jdbcType=INTEGER}
+  </select>
 </mapper>
