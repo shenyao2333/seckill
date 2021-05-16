@@ -15,8 +15,8 @@ import lombok.Data;
  * @Date: Created by 2021/5/5 16:21
  * @description: ${description}
  */
-@ApiModel(value = "com-sy-seckill-domain-ShopGoods")
 @Data
+@ApiModel(value = "com-sy-seckill-domain-ShopGoods")
 @TableName(value = "shop_goods")
 public class ShopGoods implements Serializable {
     @TableId(value = "goods_id", type = IdType.INPUT)
