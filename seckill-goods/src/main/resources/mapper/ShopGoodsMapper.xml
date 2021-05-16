@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sy.seckill.mapper.ShopGoodsMapper">
-  <resultMap id="BaseResultMap" type="com.sy.seckill.domain.ShopGoods">
+<mapper namespace="com.sy.seckill.goods.domain.mapper.ShopGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.sy.seckill.goods.domain.ShopGoods">
     <!--@mbg.generated-->
     <!--@Table shop_goods-->
     <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
