@@ -21,4 +21,9 @@ public class GrabException extends RuntimeException {
         this.msg = msg;
     }
 
+    public GrabException( String msg) {
+        this.code = -1;
+        this.msg = msg;
+    }
+
 }

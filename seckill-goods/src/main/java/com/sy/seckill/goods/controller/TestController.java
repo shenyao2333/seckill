@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.common.util.concurrent.RateLimiter;
 import com.sy.seckill.common.constants.RabbitMQConstants;
 import com.sy.seckill.common.web.R;
-import com.sy.seckill.goods.rabbitmq.MQMessage;
+import com.sy.seckill.common.constants.MQMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.sy.seckill.goods.rabbitmq;
+package com.sy.seckill.common.constants;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.Builder;
