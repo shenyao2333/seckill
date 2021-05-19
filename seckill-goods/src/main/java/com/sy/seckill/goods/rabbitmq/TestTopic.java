@@ -1,7 +1,6 @@
 package com.sy.seckill.goods.rabbitmq;
 
 import com.rabbitmq.client.Channel;
-import com.sy.seckill.common.constants.MQMessage;
 import com.sy.seckill.common.constants.RabbitMQConstants;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;

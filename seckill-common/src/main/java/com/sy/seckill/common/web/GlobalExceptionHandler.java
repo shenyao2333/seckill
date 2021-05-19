@@ -1,5 +1,7 @@
 package com.sy.seckill.common.web;
 
+import com.sy.seckill.common.config.RabbitMQConfig;
+import org.springframework.amqp.core.Binding;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
@@ -73,6 +75,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = {DuplicateKeyException.class})
     public R serviceException(DuplicateKeyException ex) {
+        RabbitMQConfig rabbitMQConfig = new RabbitMQConfig();
         return R.fail(R.CodeStatus.DATA, "索引重复");
     }
 

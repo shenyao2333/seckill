@@ -32,6 +32,12 @@ public class RabbitMQConfig {
         return new Queue(RabbitMQConstants.TOPIC_ORDER_QUEUE,true,false,false,xLMap);
     }
 
+
+    @Bean
+    public  Queue inventoryQueue(){
+        return new Queue(RabbitMQConstants.TOPIC_INVENTORY_QUEUE,true,false,false);
+    }
+
     /**
      * 死信订单列队
      * @return
@@ -64,6 +70,11 @@ public class RabbitMQConfig {
         return new TopicExchange(RabbitMQConstants.EXCHANGE_TOPIC_DEAD_LETTER,true,false);
     }
 
+    @Bean
+    public TopicExchange inventoryExchange() {
+        return new TopicExchange(RabbitMQConstants.EXCHANGE_TOPIC_INVENTORY,true,false);
+    }
+
 
 
     @Bean
@@ -78,6 +89,10 @@ public class RabbitMQConfig {
     }
 
 
+    @Bean
+    public  Binding bindingInventoryOrder(@Qualifier("inventoryQueue") Queue queue, @Qualifier("inventoryExchange") TopicExchange topicExchange){
+        return BindingBuilder.bind(queue).to(topicExchange).with(RabbitMQConstants.ROUTING_INVENTORY_ORDER);
+    }
 
 
 }

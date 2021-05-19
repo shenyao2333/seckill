@@ -19,7 +19,6 @@ spring:
         retry:
           initial-interval: 15000
           max-attempts: 2
-          enabled: false
 
   redis:
     # Redis数据库索引（默认为0）
