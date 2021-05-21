@@ -17,13 +17,18 @@ public class GrabException extends RuntimeException {
     private String msg;
 
     public GrabException(Integer code, String msg) {
+        super(msg);
         this.code = code;
         this.msg = msg;
     }
 
     public GrabException( String msg) {
+        super(msg);
         this.code = -1;
         this.msg = msg;
     }
+
+
+
 
 }
