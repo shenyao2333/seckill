@@ -41,7 +41,7 @@ public class TestController  {
                 .messageId(234234234L)
                 .message(new JSONObject(data))
                 .build();
-        rabbitTemplate.convertAndSend(RabbitMQConstants.EXCHANGE_TOPIC_ORDER,RabbitMQConstants.ROUTING_TOPIC_ORDER,message);
+        rabbitTemplate.convertAndSend(RabbitMQConstants.EXCHANGE_TOPIC_ORDER,RabbitMQConstants.ROUTING_INVENTORY_ORDER,message);
         return R.ok("成功了！");
     }
 

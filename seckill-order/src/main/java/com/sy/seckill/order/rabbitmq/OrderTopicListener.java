@@ -26,7 +26,7 @@ public class OrderTopicListener {
 
     @RabbitListener(queues = RabbitMQConstants.TOPIC_ORDER_QUEUE)
     public void order(@Payload MQMessage message,   @Headers Map<String, Object> headers, Channel channel) throws IOException {
-        System.out.println("普通消息进来："+ message);
+        System.out.println("普通order消息进来："+ message);
         channel.basicAck((Long)headers.get(AmqpHeaders.DELIVERY_TAG),false);
     }
 
